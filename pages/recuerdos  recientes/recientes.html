@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f6f4ed">
+	<title>Recuerdos | Remember Me</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../escritorio/style.css">
+	<link rel="stylesheet" href="recientes.css">
+	<script src="recientes.js" defer></script>
+</head>
+<body>
+	<header class="topbar">
+		<a class="brand" href="../inicio/inicio.html" aria-label="Remember Me, inicio">
+			<span class="brand-mark" aria-hidden="true">R.</span>
+			<span>remember <strong>me</strong></span>
+		</a>
+		<nav class="site-nav" aria-label="Navegación principal">
+			<a href="../inicio/inicio.html">Inicio</a>
+			<a href="recientes.html" aria-current="page">Recuerdos</a>
+		</nav>
+	</header>
+
+	<main class="saved-page">
+		<section class="saved-heading" aria-labelledby="page-title">
+			<div>
+				<p class="eyebrow">TU COLECCIÓN</p>
+				<h1 id="page-title">Todos tus <span>recuerdos.</span></h1>
+				<p class="saved-intro">Un vistazo a las cosas que elegiste guardar.</p>
+			</div>
+			<a class="new-note-link" href="../escritorio/index.html#memory-title"><span aria-hidden="true">＋</span> Nueva nota</a>
+		</section>
+
+		<section aria-labelledby="notes-title">
+			<div class="notes-heading">
+				<h2 id="notes-title">Notas guardadas</h2>
+				<span id="notes-count" class="notes-count">0 notas</span>
+			</div>
+			<div id="notes-grid" class="notes-grid" aria-live="polite"></div>
+			<p id="empty-notes" class="empty-notes" hidden>Aún no has guardado recuerdos.</p>
+		</section>
+	</main>
+
+	<dialog id="note-dialog" class="note-dialog" aria-labelledby="dialog-title">
+		<form method="dialog"><button class="dialog-close" aria-label="Cerrar">×</button></form>
+		<p id="dialog-meta" class="dialog-meta"></p>
+		<h2 id="dialog-title"></h2>
+		<p id="dialog-content" class="dialog-content"></p>
+	</dialog>
+</body>
+</html>

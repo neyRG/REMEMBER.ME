@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#20332d">
+	<title>Bienvenido | Remember Me</title>
+	<link rel="stylesheet" href="inicio.css">
+	<script src="inicio.js" defer></script>
+</head>
+<body>
+	<main class="welcome-page">
+		<section class="welcome-content" aria-labelledby="welcome-title">
+			<div class="welcome-copy">
+				<p class="eyebrow">TU ESPACIO, TUS RECUERDOS</p>
+				<h1 id="welcome-title">Lo que importa<br><span>merece quedarse.</span></h1>
+				<p class="intro-text">Un espacio personal y libre para tus recuerdos, ideas y notas. Tus borradores se guardan en este navegador.</p>
+			</div>
+
+			<div class="account-panel">
+				<div class="account-tabs" role="tablist" aria-label="Acceso a Remember Me">
+					<button class="account-tab is-active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel">Iniciar sesión</button>
+					<button class="account-tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-panel">Registrarse</button>
+				</div>
+
+				<form class="account-form" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+					<h2>Qué bueno verte.</h2>
+					<label for="login-email">Correo electrónico</label>
+					<input id="login-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+					<label for="login-password">Contraseña</label>
+					<input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Tu contraseña" required>
+					<button class="submit-button" type="submit">Entrar a mi espacio <span aria-hidden="true">→</span></button>
+				</form>
+
+				<form class="account-form" id="register-panel" role="tabpanel" aria-labelledby="register-tab" hidden>
+					<h2>Empecemos por aquí.</h2>
+					<label for="register-name">Tu nombre</label>
+					<input id="register-name" name="name" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" required>
+					<label for="register-email">Correo electrónico</label>
+					<input id="register-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+					<label for="register-password">Crea una contraseña</label>
+					<input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+					<button class="submit-button" type="submit">Crear mi cuenta <span aria-hidden="true">→</span></button>
+				</form>
+
+				<p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+				<a class="guest-link" href="../escritorio/index.html">Continuar al cuaderno <span aria-hidden="true">↗</span></a>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
