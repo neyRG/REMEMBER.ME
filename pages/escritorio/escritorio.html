@@ -3,47 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f6f4ed">
+    <meta name="theme-color" content="#f3faf9">
     <title>Remember Me | Tu memoria, a mano</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="escritorio.css">
+    <script src="escritorio.js" defer></script>
 </head>
 <body>
-    <header class="topbar"><div class="brand">
-        <h1><span class="brand-mark" aria-hidden="true">R.</span><span>remember <strong>me</strong></span></h1>
-        <div class="topbar-note"><span class="status-dot" aria-hidden="true"></span> Un lugar para lo que importa</div>
+    <header class="topbar">
+        <a class="brand" href="../../inicio.html" aria-label="Remember Me, inicio">
+            <span class="brand-mark" aria-hidden="true">R.</span>
+            <span><strong>me</strong></span>
+        </a>
+        <p class="topbar-note"><span class="status-dot" aria-hidden="true"></span> Un lugar para lo que importa</p>
         <nav class="site-nav" aria-label="Navegación principal">
-            <a href="../inicio/inicio.html">Cerrar sesión</a>
+            <a href="../../inicio.html">Cerrar sesión</a>
             <a href="../recuerdos%20%20recientes/recientes.html">Recuerdos</a>
         </nav>
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -71,6 +46,20 @@
                 <input id="memory-title" name="title" type="text" maxlength="80" placeholder="Lo que no quiero olvidar..." required>
                 <label for="memory-content">Añade un detalle <span>(opcional)</span></label>
                 <textarea id="memory-content" name="content" rows="8" maxlength="2000" placeholder="Escribe una idea, un momento o cualquier cosa..."></textarea>
+                <div class="attachment-tools" role="group" aria-label="Adjuntos de la nota">
+                    <button id="add-image" class="attachment-button" type="button"><span aria-hidden="true">▧</span> Añadir imagen</button>
+                    <input id="memory-image-file" class="visually-hidden" type="file" accept="image/*" tabindex="-1" aria-label="Seleccionar una imagen">
+                    <button id="add-location" class="attachment-button" type="button"><span aria-hidden="true">⌖</span> Añadir ubicación</button>
+                </div>
+                <div id="image-preview" class="attachment-preview" hidden>
+                    <img id="memory-image-preview" alt="Vista previa del adjunto">
+                    <button id="remove-image" class="remove-attachment" type="button">Quitar imagen</button>
+                </div>
+                <div id="location-preview" class="location-preview" hidden>
+                    <span id="location-label"></span>
+                    <a id="location-link" target="_blank" rel="noopener noreferrer">Ver en el mapa</a>
+                    <button id="remove-location" class="remove-attachment" type="button">Quitar ubicación</button>
+                </div>
                 <p class="save-status" id="save-status" role="status" aria-live="polite">El borrador se guarda automáticamente en este navegador.</p>
                 <div class="form-footer">
                     <label class="visually-hidden" for="memory-category">Categoría</label>
@@ -97,5 +86,9 @@
             <p class="empty-state" id="empty-state">Tu primera nota empieza aquí.</p>
         </section>
     </main>
+    <footer class="site-footer">
+        <p>© 2026 Remember Me. Todos los derechos reservados.</p>
+        <p>Creado por <strong>Ney</strong> bajo el proyecto <strong>LA MARMOTA NEGRA</strong>.</p>
+    </footer>
 </body>
 </html>

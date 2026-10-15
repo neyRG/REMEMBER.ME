@@ -3,23 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#f6f4ed">
+	<meta name="theme-color" content="#f3faf9">
 	<title>Recuerdos | Remember Me</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../escritorio/style.css">
+	<link rel="stylesheet" href="../escritorio/escritorio.css">
 	<link rel="stylesheet" href="recientes.css">
 	<script src="recientes.js" defer></script>
 </head>
 <body>
 	<header class="topbar">
-		<a class="brand" href="../inicio/inicio.html" aria-label="Remember Me, inicio">
-			<span class="brand-mark" aria-hidden="true">R.</span>
-			<span>remember <strong>me</strong></span>
+		<a class="brand" href="../../inicio.html" aria-label="Remember Me, inicio">
+			<span class="brand-mark" aria-hidden="true"><strong>R.</strong></span>
+			<span>me</span>
 		</a>
 		<nav class="site-nav" aria-label="Navegación principal">
-			<a href="../inicio/inicio.html">Inicio</a>
+			<a href="../../inicio.html">Inicio</a>
 			<a href="recientes.html" aria-current="page">Recuerdos</a>
 		</nav>
 	</header>
@@ -31,7 +28,7 @@
 				<h1 id="page-title">Todos tus <span>recuerdos.</span></h1>
 				<p class="saved-intro">Un vistazo a las cosas que elegiste guardar.</p>
 			</div>
-			<a class="new-note-link" href="../escritorio/index.html#memory-title"><span aria-hidden="true">＋</span> Nueva nota</a>
+			<a class="new-note-link" href="../escritorio/escritorio.html#memory-title"><span aria-hidden="true">＋</span> Nueva nota</a>
 		</section>
 
 		<section aria-labelledby="notes-title">
@@ -39,16 +36,80 @@
 				<h2 id="notes-title">Notas guardadas</h2>
 				<span id="notes-count" class="notes-count">0 notas</span>
 			</div>
+			<div class="notes-tools">
+				<div class="note-filters" role="group" aria-label="Filtrar recuerdos">
+					<div class="filter-field">
+						<label for="filter-from">Desde</label>
+						<input id="filter-from" type="date">
+					</div>
+					<div class="filter-field">
+						<label for="filter-to">Hasta</label>
+						<input id="filter-to" type="date">
+					</div>
+					<div class="filter-field">
+						<label for="filter-category">Etiqueta</label>
+						<select id="filter-category">
+							<option value="">Todas</option>
+							<option value="Personal">Personal</option>
+							<option value="Ideas">Ideas</option>
+							<option value="Personas">Personas</option>
+							<option value="Por hacer">Por hacer</option>
+						</select>
+					</div>
+					<button id="clear-filters" class="clear-filters" type="button" disabled>Limpiar</button>
+				</div>
+				<p id="filter-results" class="filter-results" role="status" aria-live="polite"></p>
+			</div>
+			<div id="selection-toolbar" class="selection-toolbar" hidden>
+				<p id="selection-count" role="status" aria-live="polite">0 seleccionadas</p>
+				<div class="selection-actions">
+					<button id="edit-selected" class="edit-selected" type="button" hidden>Editar en el cuaderno</button>
+					<details id="selection-menu" class="selection-menu">
+						<summary>Acciones</summary>
+						<div class="selection-menu-items">
+							<button id="rename-selected" type="button" hidden>Renombrar</button>
+							<button id="delete-selected" type="button" hidden>Eliminar seleccionadas</button>
+						</div>
+					</details>
+				</div>
+			</div>
 			<div id="notes-grid" class="notes-grid" aria-live="polite"></div>
 			<p id="empty-notes" class="empty-notes" hidden>Aún no has guardado recuerdos.</p>
 		</section>
 	</main>
+	<footer class="site-footer">
+		<p>© 2026 Remember Me. Todos los derechos reservados.</p>
+		<p>Creado por <strong>Ney</strong> bajo el proyecto <strong>LA MARMOTA NEGRA</strong>.</p>
+	</footer>
 
 	<dialog id="note-dialog" class="note-dialog" aria-labelledby="dialog-title">
 		<form method="dialog"><button class="dialog-close" aria-label="Cerrar">×</button></form>
 		<p id="dialog-meta" class="dialog-meta"></p>
 		<h2 id="dialog-title"></h2>
+		<img id="dialog-image" class="dialog-image" alt="Imagen adjunta al recuerdo" hidden>
 		<p id="dialog-content" class="dialog-content"></p>
+		<a id="dialog-location" class="dialog-location" target="_blank" rel="noopener noreferrer" hidden>Ver ubicación en el mapa</a>
+	</dialog>
+
+	<dialog id="rename-dialog" class="note-dialog rename-dialog" aria-labelledby="rename-title">
+		<form id="rename-form" class="rename-form">
+			<h2 id="rename-title">Renombrar recuerdo</h2>
+			<label for="rename-input">Nuevo título</label>
+			<input id="rename-input" name="title" type="text" maxlength="80" required>
+			<div class="rename-actions">
+				<button id="cancel-rename" class="cancel-rename" type="button">Cancelar</button>
+				<button class="confirm-rename" type="submit">Guardar</button>
+			</div>
+		</form>
+	</dialog>
+
+	<dialog id="delete-dialog" class="note-dialog delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-message">
+		<h2 id="delete-title">¿Deseas eliminarlo?</h2>
+		<p id="delete-message" class="delete-message"></p>
+		<div class="delete-actions">
+			<button id="cancel-delete" class="cancel-delete" type="button">No</button>
+			<button id="confirm-delete" class="confirm-delete" type="button">Sí, eliminar</button>
+		</div>
 	</dialog>
 </body>
 </html>
