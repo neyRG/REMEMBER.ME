@@ -19,18 +19,20 @@ Después visita `http://localhost:8000`.
 - Consultar, renombrar y eliminar recuerdos desde la página de Recuerdos.
 - Filtrar por fecha y categoría.
 - Guardar notas y borradores en el almacenamiento local del navegador.
+- Editar una foto de perfil, nombre, información personal y correo guardados en este navegador.
 
 ## Datos y permisos
 
 Las notas se guardan en `localStorage` del navegador y no se sincronizan entre dispositivos. Borrar los datos del sitio en el navegador también elimina las notas guardadas. Las imágenes se almacenan como datos de imagen dentro de cada nota. La ubicación requiere permiso del navegador; el enlace del mapa abre Google Maps.
 
-Los formularios de inicio de sesión y registro son demostrativos y todavía no están conectados a un servicio de cuentas.
+Los formularios de inicio de sesión y registro son demostrativos y todavía no están conectados a un servicio de cuentas. El perfil y el correo se guardan localmente; el cambio de contraseña permanece deshabilitado hasta conectar un servicio de autenticación seguro. No se guardan contraseñas en el navegador.
 
 ## Archivos principales
 
 - `inicio.html`, `inicio.css`, `inicio.js`: portada y acceso.
 - `pages/escritorio/`: cuaderno y creación/edición de notas.
 - `pages/recuerdos  recientes/`: colección, filtros y acciones de notas.
+- `pages/perfil/`: foto, información personal y correo del perfil.
 - `assets/img/`: imágenes del proyecto.
 
 © 2026 Remember Me. Todos los derechos reservados. Creado por Ney bajo el proyecto **LA MARMOTA NEGRA**.

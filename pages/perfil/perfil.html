@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3faf9">
+    <title>Mi perfil | Remember Me</title>
+    <link rel="stylesheet" href="../escritorio/escritorio.css">
+    <link rel="stylesheet" href="perfil.css">
+    <script src="perfil.js" defer></script>
+</head>
+<body>
+    <header class="topbar profile-topbar">
+        <a class="brand" href="../../inicio.html" aria-label="Remember Me, inicio">
+            <span class="brand-mark" aria-hidden="true">R.</span>
+            <span><strong>me</strong></span>
+        </a>
+        <p class="topbar-note"><span class="status-dot" aria-hidden="true"></span> MI PERFIL</p>
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a href="../escritorio/escritorio.html">Mi cuaderno</a>
+            <a href="../recuerdos%20%20recientes/recientes.html">Mi colección</a>
+            <a href="../../inicio.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="profile-page">
+        <header class="profile-heading">
+            <div>
+                <p class="eyebrow">TU CUENTA</p>
+                <h1>Tu perfil<span>.</span></h1>
+                <p>Administra tu información personal y tus preferencias.</p>
+            </div>
+        </header>
+
+        <div class="profile-layout">
+            <aside class="profile-identity" aria-label="Vista previa del perfil">
+                <div class="avatar-frame">
+                    <div id="avatar-fallback" class="avatar-fallback" aria-hidden="true">N</div>
+                    <img id="avatar-image" class="profile-avatar" alt="Foto de perfil" hidden>
+                </div>
+                <label class="avatar-change" for="avatar-file">Cambiar foto</label>
+                <input id="avatar-file" class="visually-hidden" type="file" accept="image/*" aria-label="Seleccionar foto de perfil">
+                <button id="remove-avatar" class="remove-avatar" type="button" hidden>Quitar foto</button>
+                <p id="avatar-status" class="profile-status" role="status" aria-live="polite"></p>
+                <h2 id="profile-name-preview">Tu nombre</h2>
+                <p id="profile-email-preview">Añade tu correo electrónico</p>
+                <p class="profile-local-note">La información se guarda en este navegador.</p>
+            </aside>
+
+            <div class="profile-settings">
+                <section class="profile-section" aria-labelledby="personal-title">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">SOBRE TI</p>
+                            <h2 id="personal-title">Información personal</h2>
+                        </div>
+                    </div>
+                    <form id="personal-form" class="profile-form">
+                        <div class="form-field">
+                            <label for="profile-name">Nombre de usuario</label>
+                            <input id="profile-name" name="name" type="text" maxlength="50" autocomplete="nickname" placeholder="¿Cómo te llamas?" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="profile-bio">Acerca de ti</label>
+                            <textarea id="profile-bio" name="bio" rows="3" maxlength="240" placeholder="Una pequeña presentación"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="profile-birthday">Fecha de nacimiento</label>
+                                <input id="profile-birthday" name="birthday" type="date" autocomplete="bday">
+                            </div>
+                            <div class="form-field">
+                                <label for="profile-city">Ciudad</label>
+                                <input id="profile-city" name="city" type="text" maxlength="80" autocomplete="address-level2" placeholder="Tu ciudad">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <p id="personal-status" class="profile-status" role="status" aria-live="polite"></p>
+                            <button class="profile-button" type="submit">Guardar información</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="profile-section" aria-labelledby="email-title">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">ACCESO</p>
+                            <h2 id="email-title">Correo electrónico</h2>
+                        </div>
+                    </div>
+                    <form id="email-form" class="profile-form">
+                        <div class="form-field">
+                            <label for="current-email">Correo actual</label>
+                            <input id="current-email" type="email" autocomplete="email" readonly placeholder="Sin correo guardado">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="new-email">Nuevo correo</label>
+                                <input id="new-email" name="email" type="email" autocomplete="email" placeholder="nuevo@correo.com" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="confirm-email">Confirmar correo</label>
+                                <input id="confirm-email" type="email" autocomplete="email" placeholder="Repite el nuevo correo" required>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <p id="email-status" class="profile-status" role="status" aria-live="polite"></p>
+                            <button class="profile-button" type="submit">Actualizar correo</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="profile-section security-section" aria-labelledby="security-title">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">SEGURIDAD</p>
+                            <h2 id="security-title">Contraseña</h2>
+                        </div>
+                    </div>
+                    <p class="security-note">El acceso todavía no está conectado a un servicio de cuentas. Por seguridad, esta versión no guarda ni cambia contraseñas.</p>
+                    <fieldset class="password-fields" disabled>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="new-password">Nueva contraseña</label>
+                                <input id="new-password" type="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres">
+                            </div>
+                            <div class="form-field">
+                                <label for="confirm-password">Confirmar contraseña</label>
+                                <input id="confirm-password" type="password" autocomplete="new-password" placeholder="Repite la contraseña">
+                            </div>
+                        </div>
+                        <button class="profile-button" type="button">Cambiar contraseña</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Remember Me. Todos los derechos reservados.</p>
+        <p>Creado por <strong>Ney</strong> bajo el proyecto <strong>LA MARMOTA NEGRA</strong>.</p>
+    </footer>
+</body>
+</html>
