@@ -287,17 +287,6 @@
         display: none;
     }
 
-    .profile-topbar .site-nav {
-        flex: 1 0 100%;
-        justify-content: center;
-        gap: 8px 20px;
-    }
-
-    .profile-topbar .site-nav a {
-        padding: 5px 0;
-        font-size: 12px;
-    }
-
     .profile-page {
         padding: 38px 22px 56px;
     }

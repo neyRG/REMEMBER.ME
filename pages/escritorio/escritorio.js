@@ -69,8 +69,9 @@ function restoreDraft() {
 		memoryForm.elements.title.value = draft.title || "";
 		memoryForm.elements.content.value = draft.content || "";
 		memoryForm.elements.category.value = draft.category || "Personal";
+		memoryForm.elements.mood.value = draft.mood || "";
 		restoreAttachments(draft);
-		if (draft.title || draft.content || draft.image || draft.location) {
+		if (draft.title || draft.content || draft.mood || draft.image || draft.location) {
 			saveStatus.textContent = "Borrador recuperado; se guarda automáticamente en este navegador.";
 		}
 	} catch {
@@ -86,11 +87,12 @@ function scheduleDraftSave() {
 			title: memoryForm.elements.title.value.trim(),
 			content: memoryForm.elements.content.value,
 			category: memoryForm.elements.category.value,
+			mood: memoryForm.elements.mood.value,
 			image: attachedImage,
 			location: attachedLocation,
 		};
 		try {
-			if (draft.title || draft.content || draft.image || draft.location) {
+			if (draft.title || draft.content || draft.mood || draft.image || draft.location) {
 				localStorage.setItem(draftStorageKey, JSON.stringify(draft));
 			} else {
 				localStorage.removeItem(draftStorageKey);
@@ -117,6 +119,7 @@ function restoreEditRequest() {
 		memoryForm.elements.title.value = savedMemory.title || "";
 		memoryForm.elements.content.value = savedMemory.content || "";
 		memoryForm.elements.category.value = savedMemory.category || "Personal";
+		memoryForm.elements.mood.value = savedMemory.mood || "";
 		restoreAttachments(savedMemory);
 		submitButton.textContent = "Guardar cambios";
 		saveStatus.textContent = "Editando este recuerdo. Guarda los cambios para actualizarlo.";
@@ -238,7 +241,17 @@ function renderMemories() {
 
 		const category = document.createElement("span");
 		category.className = "memory-category";
-		category.textContent = memory.category;
+		category.textContent = memory.category || "Personal";
+
+		const labels = document.createElement("div");
+		labels.className = "memory-labels";
+		labels.append(category);
+		if (memory.mood) {
+			const mood = document.createElement("span");
+			mood.className = "memory-mood";
+			mood.textContent = memory.mood;
+			labels.append(mood);
+		}
 
 		const date = document.createElement("time");
 		date.dateTime = memory.createdAt || "";
@@ -251,7 +264,7 @@ function renderMemories() {
 
 		const title = document.createElement("h3");
 		title.textContent = memory.title;
-		meta.append(category, date);
+		meta.append(labels, date);
 		article.append(meta, title);
 
 		if (memory.content) {
@@ -289,6 +302,7 @@ memoryForm.addEventListener("submit", (event) => {
 		title: formData.get("title").trim(),
 		content: formData.get("content").trim(),
 		category: formData.get("category"),
+		mood: formData.get("mood"),
 		image: attachedImage,
 		location: attachedLocation,
 	};

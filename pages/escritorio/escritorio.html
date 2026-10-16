@@ -15,12 +15,17 @@
             <span><strong>me</strong></span>
         </a>
         <p class="topbar-note"><span class="status-dot" aria-hidden="true"></span> <strong>MI CUADERNO</strong></p>
-        <nav class="site-nav" aria-label="Navegación principal">
-            <a href="../recuerdos%20%20recientes/recientes.html"><strong>MI COLECCIÓN</strong> </a>
-            <a href="../perfil/perfil.html">Mi perfil</a>
-            <a href="../../inicio.html">Cerrar sesión</a>
-            
-        </nav>
+        <details class="nav-menu">
+            <summary aria-label="Abrir navegación">
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span>Menú</span>
+            </summary>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="../recuerdos%20%20recientes/recientes.html"><strong>MI COLECCIÓN</strong></a>
+                <a href="../perfil/perfil.html">Mi perfil</a>
+                <a href="../../inicio.html">Cerrar sesión</a>
+            </nav>
+        </details>
 
 
 
@@ -45,8 +50,9 @@
                     </div>
                 </div>
                 <label for="memory-title">Ponle un título</label>
+                 
+            
                 <input id="memory-title" name="title" type="text" maxlength="80" placeholder="Lo que no quiero olvidar..." required>
-                <label for="memory-content">Añade un detalle <span>(opcional)</span></label>
                 <textarea id="memory-content" name="content" rows="8" maxlength="2000" placeholder="Escribe una idea, un momento o cualquier cosa..."></textarea>
                 <div class="attachment-tools" role="group" aria-label="Adjuntos de la nota">
                     <button id="add-image" class="attachment-button" type="button"><span aria-hidden="true">▧</span> Añadir imagen</button>
@@ -64,13 +70,31 @@
                 </div>
                 <p class="save-status" id="save-status" role="status" aria-live="polite">El borrador se guarda automáticamente en este navegador.</p>
                 <div class="form-footer">
-                    <label class="visually-hidden" for="memory-category">Categoría</label>
-                    <select id="memory-category" name="category">
-                        <option value="Personal">Personal</option>
-                        <option value="Ideas">Ideas</option>
-                        <option value="Personas">Personas</option>
-                        <option value="Por hacer">Por hacer</option>
-                    </select>
+                    <div class="form-options">
+                        <label class="visually-hidden" for="memory-category">Categoría</label>
+                        <select id="memory-category" name="category">
+                            <option value="Personal">Personal</option>
+                            <option value="Ideas">Ideas</option>
+                            <option value="Personas">Personas</option>
+                            <option value="Por hacer">Por hacer</option>
+                        </select>
+                        <label class="visually-hidden" for="memory-mood">Estado de ánimo (opcional)</label>
+                        <select id="memory-mood" name="mood">
+                            <option value="" selected>Estado de ánimo</option>
+                            <option value="Feliz">Feliz</option>
+                            <option value="Tranquilo/a">Tranquilo/a</option>
+                            <option value="Agradecido/a">Agradecido/a</option>
+                            <option value="Ilusionado/a">Ilusionado/a</option>
+                            <option value="Motivado/a">Motivado/a</option>
+                            <option value="Nostálgico/a">Nostálgico/a</option>
+                            <option value="Preocupado/a">Preocupado/a</option>
+                            <option value="Ansioso/a">Ansioso/a</option>
+                            <option value="Triste">Triste</option>
+                            <option value="Frustrado/a">Frustrado/a</option>
+                            <option value="Enojado/a">Enojado/a</option>
+                            <option value="Cansado/a">Cansado/a</option>
+                        </select>
+                    </div>
                     <button type="submit"><span aria-hidden="true">＋</span> Guardar nota</button>
                 </div>
             </form>

@@ -52,14 +52,62 @@ body {
     line-height: 1;
 }
 
-.site-nav {
+.nav-menu {
+    position: relative;
+}
+
+.nav-menu summary {
     display: flex;
+    min-height: 42px;
     align-items: center;
-    gap: clamp(14px, 2vw, 25px);
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--deep-teal);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    list-style: none;
+}
+
+.nav-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-menu summary:focus-visible {
+    outline: 2px solid var(--deep-teal);
+    outline-offset: 3px;
+}
+
+.menu-icon {
+    display: grid;
+    width: 16px;
+    gap: 4px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+}
+
+.site-nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    display: grid;
+    min-width: 190px;
+    padding: 6px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--paper);
+    box-shadow: 0 12px 28px #193d4626;
 }
 
 .site-nav a {
-    padding: 10px 0;
+    padding: 11px 12px;
     border-bottom: 2px solid transparent;
     color: var(--muted);
     font-size: 13px;
@@ -380,6 +428,12 @@ select:focus {
     gap: 12px;
 }
 
+.form-options {
+    display: flex;
+    min-width: 0;
+    gap: 8px;
+}
+
 .form-footer select {
     width: auto;
     min-width: 130px;
@@ -478,14 +532,34 @@ select:focus {
 .memory-meta {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 8px;
     color: var(--muted);
     font-size: 10px;
 }
 
+.memory-labels {
+    display: flex;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
 .memory-category {
+    padding: 3px 7px;
+    border-radius: 3px;
+    background: var(--aqua-soft);
     color: var(--deep-teal);
     font-weight: 700;
+}
+
+.memory-mood {
+    padding: 3px 7px;
+    border-radius: 3px;
+    background: #fff0e9;
+    color: #92543e;
+    font-weight: 600;
 }
 
 .memory-item h3 {
@@ -622,13 +696,23 @@ select:focus {
         grid-template-columns: 1fr;
     }
 
+    .form-options {
+        flex: 1 0 100%;
+    }
+
     .form-footer select {
+        width: 0;
         min-width: 0;
-        flex: 1;
+        flex: 1 1 0;
     }
 
     .form-footer button {
+        margin-left: auto;
         padding: 0 12px;
+    }
+
+    .memory-meta time {
+        flex-shrink: 0;
     }
 }
 
