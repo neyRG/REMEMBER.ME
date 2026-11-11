@@ -1,0 +1,64 @@
+.eyebrow {
+	margin: 0 0 0.7rem;
+	color: var(--deep-teal);
+	font-size: 0.68rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+}
+
+input,
+textarea,
+select {
+	width: 100%;
+	min-height: 46px;
+	padding: 0.75rem 0.9rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-control);
+	background: #fff;
+	color: var(--ink);
+	font-size: 0.9rem;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+
+	&:focus {
+		border-color: var(--deep-teal);
+		box-shadow: 0 0 0 3px #1e657018;
+		outline: none;
+	}
+
+	&::placeholder {
+		color: #8a9b9d;
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
+button {
+	border-radius: var(--radius-control);
+	transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+
+	&:focus-visible {
+		outline: 2px solid var(--deep-teal);
+		outline-offset: 3px;
+	}
+
+	&:not(:disabled):hover {
+		transform: translateY(-1px);
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.55;
+	}
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}

@@ -1,0 +1,138 @@
+.topbar {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	display: flex;
+	min-height: 76px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0 clamp(1rem, 5vw, 4.5rem);
+	border-bottom: 1px solid #dce9e5;
+	background: #f8fbfae8;
+	backdrop-filter: blur(16px);
+}
+
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.65rem;
+	color: var(--deep-teal);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.15rem;
+	text-decoration: none;
+
+	strong {
+		font-weight: 700;
+	}
+}
+
+.brand-mark {
+	display: grid;
+	width: 42px;
+	aspect-ratio: 1;
+	place-items: center;
+	border-radius: 50%;
+	background: var(--aqua);
+	font-weight: 700;
+}
+
+.topbar-note {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+}
+
+.status-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #6fae8d;
+	box-shadow: 0 0 0 4px #6fae8d20;
+}
+
+.nav-menu {
+	position: relative;
+
+	summary {
+		display: flex;
+		min-height: 42px;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0 0.85rem;
+		border: 1px solid var(--line);
+		border-radius: var(--radius-control);
+		color: var(--deep-teal);
+		cursor: pointer;
+		font-size: 0.82rem;
+		font-weight: 700;
+		list-style: none;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--deep-teal);
+			outline-offset: 3px;
+		}
+	}
+}
+
+.menu-icon {
+	display: grid;
+	width: 16px;
+	gap: 4px;
+
+	span {
+		display: block;
+		height: 2px;
+		border-radius: 2px;
+		background: currentColor;
+	}
+}
+
+.site-nav {
+	position: absolute;
+	top: calc(100% + 0.65rem);
+	right: 0;
+	display: grid;
+	min-width: 205px;
+	padding: 0.4rem;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: var(--paper);
+	box-shadow: var(--shadow-soft);
+
+	a {
+		padding: 0.8rem 0.85rem;
+		border-radius: 9px;
+		color: var(--muted);
+		font-size: 0.84rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: color 160ms ease, background 160ms ease;
+
+		&:hover,
+		&[aria-current="page"] {
+			background: var(--aqua-soft);
+			color: var(--deep-teal);
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.topbar {
+		min-height: 68px;
+		padding-inline: 1rem;
+	}
+
+	.topbar-note {
+		display: none;
+	}
+}

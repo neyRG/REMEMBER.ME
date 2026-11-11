@@ -1,0 +1,23 @@
+$ink: #193d46;
+$muted: #61777c;
+$paper: #f8fbfa;
+$deep-teal: #1e6570;
+$aqua: #a8e4dc;
+$aqua-soft: #e3f5f2;
+$coral: #e58c70;
+$line: #d7e6e4;
+
+:root {
+	color-scheme: light;
+	--ink: #{$ink};
+	--muted: #{$muted};
+	--paper: #{$paper};
+	--deep-teal: #{$deep-teal};
+	--aqua: #{$aqua};
+	--aqua-soft: #{$aqua-soft};
+	--coral: #{$coral};
+	--line: #{$line};
+	--shadow-soft: 0 16px 42px #193d461a;
+	--radius-card: 18px;
+	--radius-control: 10px;
+}

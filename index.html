@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#20332d">
+	<title>Bienvenido | Remember Me</title>
+	<link rel="stylesheet" href="style/style.css">
+	<script src="script/main.js" defer></script>
+</head>
+<body class="home-page">
+	<header class="site-header">
+		<h1 class="site-title"><span class="R" aria-hidden="true">R.</span><span> <strong>me</strong></span></h1>
+		<details class="nav-menu">
+			<summary aria-label="Abrir navegación">
+				<span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+				<span>Menú</span>
+			</summary>
+			<nav class="site-nav" aria-label="Navegación principal">
+				<a href="pages/perfil.html">Perfil</a>
+				<a href="pages/escritorio.html">Mi cuaderno</a>
+				<a href="pages/recientes.html">Recuerdos</a>
+			</nav>
+		</details>
+
+
+	</header>
+	<main class="welcome-page">
+		<section class="welcome-content" aria-labelledby="welcome-title">
+			<div class="welcome-copy">
+				<p class="eyebrow">TU ESPACIO, TUS RECUERDOS</p>
+				<h1 id="welcome-title">Lo que importa<br><span>merece quedarse.</span></h1>
+				<p class="intro-text">Un espacio libre para tus recuerdos, ideas y notas.</p>
+				 
+				 
+
+			</div>
+			
+			<div class="account-panel">
+				<div class="account-tabs" role="tablist" aria-label="Acceso a Remember Me">
+					<button class="account-tab is-active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel">Iniciar sesión</button>
+					<button class="account-tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-panel">Registrarse</button>
+				</div>
+
+				<form class="account-form" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+					
+					<h2>Qué bueno verte.</h2>
+					
+					<label for="login-email">Correo electrónico</label>
+					<input id="login-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+					<label for="login-password">Contraseña</label>
+					<input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Tu contraseña" required>
+					<button class="submit-button" type="submit">Entrar a mi espacio <span aria-hidden="true">→</span></button>
+				</form>
+
+				<form class="account-form" id="register-panel" role="tabpanel" aria-labelledby="register-tab" hidden>
+					<h2>Empecemos por aquí.</h2>
+					<p>crea tu cuenta para guardar tus recuerdos</p>
+					<label for="register-name">Tu nombre</label>
+					<input id="register-name" name="name" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" required>
+					<label for="register-email">Correo electrónico</label>
+					<input id="register-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+					<label for="register-password">Crea una contraseña</label>
+					<input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+					<button class="submit-button" type="submit">Crear mi cuenta <span aria-hidden="true">→</span></button>
+				</form>
+
+				<p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+				<a class="guest-link" href="pages/escritorio.html">Continuar al cuaderno <span aria-hidden="true">↗</span></a>
+			</div>
+			<div> 
+				<h3>Que encontras aqui</h3>
+				<h4>CUADERNO DIGITAL</h4>
+				<p class="intro-text">Para guardar tus recuerdos y notas que podras etiquetar como</p>
+				<ul class="intro-text">
+					<li>Personal</li>
+					<li>Ideas</li>
+					<li>Personas</li>
+					<li>Por hacer</li>
+				</ul>
+				<p class="intro-text">también puedes añadir imágenen y ubicacion del lugar donde los guardaste . Cada nota tendra una fecha y hora de creación según la hora local del dispositivo</p>
+				<img src="assets/img/cuaderno.png" alt="imagenCuaderno digital">
+				<h4>COLECCIÓN/NOTAS</h4>
+				<p class="intro-text">Un vistazo a las notas que elegiste guardar , donde estaran tus recuerdos  , con un enfoque personalizado </p>
+				<img src="assets/img/colecion.png" alt="imagen mi colección">
+
+			</div>
+		</section>
+	</main>
+	<footer class="site-footer">
+		<p>© 2026 Remember Me. Todos los derechos reservados.</p>
+		<p>Creado por <strong>Ney</strong> bajo el proyecto <strong>LA MARMOTA NEGRA</strong>.</p>
+	</footer>
+</body>
+</html>

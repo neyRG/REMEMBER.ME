@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3faf9">
+    <title>Remember Me | Tu memoria, a mano</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="Remember Me, inicio">
+            <span class="brand-mark" aria-hidden="true">R.</span>
+            <span><strong>me</strong></span>
+        </a>
+        <p class="topbar-note"><span class="status-dot" aria-hidden="true"></span> <strong>MI CUADERNO</strong></p>
+        <details class="nav-menu">
+            <summary aria-label="Abrir navegación">
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span>Menú</span>
+            </summary>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="escritorio.html" aria-current="page">MI CUADERNO</a>
+                <a href="recientes.html"><strong>MI COLECCIÓN</strong></a>
+                <a href="perfil.html">Mi perfil</a>
+                <a href="../index.html">Cerrar sesión</a>
+            </nav>
+        </details>
+
+
+
+
+    </header>
+
+    <main id="inicio">
+        <section class="workspace" aria-labelledby="page-title">
+            <div class="welcome">
+                
+                <h2 id="page-title">Que no se te<br><span>escape nada.</span></h2>
+                <p class="welcome-copy">Ideas, momentos y pequeñas cosas que quieres tener cerca.</p>
+                <div class="date-note"><span aria-hidden="true">✳</span><time id="today"></time></div>
+            </div>
+
+            <form class="memory-form" id="memory-form">
+                <div class="form-heading">
+                    <span class="form-icon" aria-hidden="true">＋</span>
+                    <div>
+                        <p class="eyebrow">NUEVA NOTA</p>
+                        <h2>Guarda un recuerdo</h2>
+                    </div>
+                </div>
+                <label for="memory-title">Ponle un título</label>
+                 
+            
+                <input id="memory-title" name="title" type="text" maxlength="80" placeholder="Lo que no quiero olvidar..." required>
+                <textarea id="memory-content" name="content" rows="8" maxlength="2000" placeholder="Escribe una idea, un momento o cualquier cosa..."></textarea>
+                <div class="attachment-tools" role="group" aria-label="Adjuntos de la nota">
+                    <button id="add-image" class="attachment-button" type="button"><span aria-hidden="true">▧</span> Añadir imagen</button>
+                    <input id="memory-image-file" class="visually-hidden" type="file" accept="image/*" tabindex="-1" aria-label="Seleccionar una imagen">
+                    <button id="add-location" class="attachment-button" type="button"><span aria-hidden="true">⌖</span> Añadir ubicación</button>
+                </div>
+                <div id="image-preview" class="attachment-preview" hidden>
+                    <img id="memory-image-preview" alt="Vista previa del adjunto">
+                    <button id="remove-image" class="remove-attachment" type="button">Quitar imagen</button>
+                </div>
+                <div id="location-preview" class="location-preview" hidden>
+                    <span id="location-label"></span>
+                    <a id="location-link" target="_blank" rel="noopener noreferrer">Ver en el mapa</a>
+                    <button id="remove-location" class="remove-attachment" type="button">Quitar ubicación</button>
+                </div>
+                <p class="save-status" id="save-status" role="status" aria-live="polite">El borrador se guarda automáticamente en este navegador.</p>
+                <div class="form-footer">
+                    <div class="form-options">
+                        <label class="visually-hidden" for="memory-category">Categoría</label>
+                        <select id="memory-category" name="category">
+                            <option value="Personal">Personal</option>
+                            <option value="Ideas">Ideas</option>
+                            <option value="Personas">Personas</option>
+                            <option value="Por hacer">Por hacer</option>
+                        </select>
+                        <label class="visually-hidden" for="memory-mood">Estado de ánimo (opcional)</label>
+                        <select id="memory-mood" name="mood">
+                            <option value="" selected>Estado de ánimo</option>
+                            <option value="Feliz">Feliz</option>
+                            <option value="Tranquilo/a">Tranquilo/a</option>
+                            <option value="Agradecido/a">Agradecido/a</option>
+                            <option value="Ilusionado/a">Ilusionado/a</option>
+                            <option value="Motivado/a">Motivado/a</option>
+                            <option value="Nostálgico/a">Nostálgico/a</option>
+                            <option value="Preocupado/a">Preocupado/a</option>
+                            <option value="Ansioso/a">Ansioso/a</option>
+                            <option value="Triste">Triste</option>
+                            <option value="Frustrado/a">Frustrado/a</option>
+                            <option value="Enojado/a">Enojado/a</option>
+                            <option value="Cansado/a">Cansado/a</option>
+                        </select>
+                    </div>
+                    <button type="submit"><span aria-hidden="true">＋</span> Guardar nota</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="recent" aria-labelledby="recent-title">
+            <div class="recent-heading">
+                <div>
+                    <p class="eyebrow">TU COLECCIÓN</p>
+                    <h2 id="recent-title">Recuerdos recientes <span id="memory-count">0</span></h2>
+                </div>
+                <span class="recent-caption">Lo importante, siempre a mano.</span>
+            </div>
+            <div class="memory-list" id="memory-list" aria-live="polite"></div>
+            <p class="empty-state" id="empty-state">Tu primera nota empieza aquí.</p>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>© 2026 Remember Me. Todos los derechos reservados.</p>
+        <p>Creado por <strong>Ney</strong> bajo el proyecto <strong>LA MARMOTA NEGRA</strong>.</p>
+    </footer>
+</body>
+</html>

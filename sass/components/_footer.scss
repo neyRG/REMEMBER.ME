@@ -1,0 +1,27 @@
+.site-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem 1.5rem;
+	padding: 1.2rem clamp(1rem, 5vw, 4.5rem);
+	border-top: 1px solid #dce9e5;
+	background: #f8fbfae8;
+	color: var(--muted);
+	font-size: 0.75rem;
+	line-height: 1.6;
+
+	p {
+		margin: 0;
+	}
+
+	strong {
+		color: var(--deep-teal);
+	}
+}
+
+@media (max-width: 600px) {
+	.site-footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+}

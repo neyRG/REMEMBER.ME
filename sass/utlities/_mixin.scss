@@ -1,0 +1,12 @@
+@mixin panel($padding: clamp(1.25rem, 3vw, 2rem)) {
+	padding: $padding;
+	border: 1px solid #dce9e5;
+	border-radius: var(--radius-card);
+	background: var(--paper);
+	box-shadow: var(--shadow-soft);
+}
+
+@mixin page-shell($max-width: 1120px) {
+	width: min($max-width, calc(100% - 2.5rem));
+	margin-inline: auto;
+}
